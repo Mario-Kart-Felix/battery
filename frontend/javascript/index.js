@@ -31,13 +31,16 @@ console.info("YAY for coding !!")
 const batt = document.getElementById('batt');
 const battId = document.getElementById('bat-id');
 
+const addBitsUp = (element, element2Add) => {
+    element.addEventListener('click', (event) => {
+        // Callback
+        var i = element2Add.value;
+        console.log(i);
+        element2Add.value = ++i;
+        console.log(`i clicked ${i} times`)
+        // event.currentTarget.setAttribute("disabled", "");
+    });
 
-var i = 0;
-batt.addEventListener('click', (event) => {
-    // Callback
-    var i = battId.value;
-    console.log(i);
-    battId.value = ++i;
-    console.log(`i clicked ${i} times`)
-    // event.currentTarget.setAttribute("disabled", "");
-});
+};
+
+addBitsUp(batt, battId);
