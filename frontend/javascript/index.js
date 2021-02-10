@@ -4,7 +4,6 @@ import 'bootstrap';
 const componentsContext = require.context("bridgetownComponents", true, /.js$/)
 componentsContext.keys().forEach(componentsContext)
 
-console.info("lets  jh!")
 // Burger menus
 document.addEventListener('DOMContentLoaded', function() {
     // open/close
@@ -64,10 +63,19 @@ const addBitsUp = (element, element2Add) => {
     });
 
 };
+///
+const clearAlert = () => {
+    battId.classList.remove("alert-success");
+    console.info("it worked")
+};
 
 // lets go SOUP TIME !!!
+window.addEventListener("mousedown", function() {
+    // could use select
+    clearAlert();
+}, false);
 
-console.info(hoursId.value)
+// console.info(hoursId.value)
 
 button.addEventListener('click', (event) => {
     // get all the values bitches
@@ -75,13 +83,18 @@ button.addEventListener('click', (event) => {
     var tablets = tablId.value;
     console.log(hours);
     console.log(tablets);
-    // element2Add.value = ++i;
-    // // console.log(`i clicked ${i} times`)
-    // // event.currentTarget.setAttribute("disabled", "");
+
+    var calc = iPadOjb["availWh"]
+
+
+    var result = 3;
+    battId.value = result;
+    battId.classList.add("alert-success");
+    //
 });
 
 
 
 // function calls
-addBitsUp(batt, battId);
+// addBitsUp(batt, battId);
 addBitsUp(tabl, tablId);
