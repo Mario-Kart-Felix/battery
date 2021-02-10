@@ -27,20 +27,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-console.info("YAY for coding !!")
+
+//  Objects Store
+var batOjb = {
+    capacity: 3200,
+    capacity_avail: 0.83,
+    totalWh: 241.92,
+    availWh: 2656
+};
+// Ipad Pro
+var iPadOjb = {
+    Wh2Charg: 28,
+    ChargfromQik: 7.2
+};
+// console.info(batOjb["availWh"])
+
+// batteries
 const batt = document.getElementById('batt');
 const battId = document.getElementById('bat-id');
-
+// hours
+const hoursId = document.getElementById('hrs-id');
+// tablets iPad Pro
+const tabl = document.getElementById('tabl');
+const tablId = document.getElementById('tab-id');
+// calc button
+const button = document.getElementById('submit');
+//
 const addBitsUp = (element, element2Add) => {
     element.addEventListener('click', (event) => {
         // Callback
         var i = element2Add.value;
-        console.log(i);
+        // console.log(i);
         element2Add.value = ++i;
-        console.log(`i clicked ${i} times`)
+        // console.log(`i clicked ${i} times`)
         // event.currentTarget.setAttribute("disabled", "");
     });
 
 };
 
+// lets go SOUP TIME !!!
+
+console.info(hoursId.value)
+
+button.addEventListener('click', (event) => {
+    // get all the values bitches
+    var hours = hoursId.value;
+    var tablets = tablId.value;
+    console.log(hours);
+    console.log(tablets);
+    // element2Add.value = ++i;
+    // // console.log(`i clicked ${i} times`)
+    // // event.currentTarget.setAttribute("disabled", "");
+});
+
+
+
+// function calls
 addBitsUp(batt, battId);
+addBitsUp(tabl, tablId);
