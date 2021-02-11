@@ -1,5 +1,6 @@
 import "index.scss"
 import 'bootstrap';
+
 // Import all javascript files from src/_components
 const componentsContext = require.context("bridgetownComponents", true, /.js$/)
 componentsContext.keys().forEach(componentsContext)
@@ -45,7 +46,7 @@ var iPadOjb = {
 const batt = document.getElementById('batt');
 const battId = document.getElementById('bat-id');
 // hours
-const hoursId = document.getElementById('hrs-id');
+// const hoursId = document.getElementById('hrs-id');
 // tablets iPad Pro
 const tabl = document.getElementById('tabl');
 const tablId = document.getElementById('tab-id');
@@ -79,9 +80,9 @@ window.addEventListener("mousedown", function() {
 
 button.addEventListener('click', (event) => {
     // get all the values bitches
-    var hours = hoursId.value;
+    // var hours = hoursId.value;
     var tablets = tablId.value;
-    console.log(hours);
+    // console.log(hours);
     console.log(tablets);
 
     var calc = iPadOjb["availWh"]

@@ -18,3 +18,4 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "bridgetown", "~> 0.19.2"
 gem 'bootstrap', '~> 4.0.0'
+# gem 'font-awesome-sass', '~> 5.12.0'
