@@ -1,5 +1,5 @@
 import "index.scss";
-import "bootstrap";
+// import "bootstrap";
 
 // Import all javascript files from src/_components
 const componentsContext = require.context("bridgetownComponents", true, /.js$/);

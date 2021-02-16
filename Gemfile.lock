@@ -57,6 +57,12 @@ GEM
       thor (~> 1.1)
       tilt (~> 2.0)
       webrick (~> 1.7)
+    bridgetown-inline-svg (1.1.1)
+      bridgetown (>= 0.15, < 2.0)
+      svg_optimizer (~> 0.2.5)
+    bridgetown-minify-html (1.0.1)
+      bridgetown (>= 0.15, < 2.0)
+      htmlcompressor (>= 0.4, < 1.0)
     bridgetown-paginate (0.19.2)
       bridgetown-core (= 0.19.2)
     builder (3.2.4)
@@ -76,6 +82,7 @@ GEM
     forwardable-extended (2.6.0)
     hash_with_dot_access (1.1.0)
       activesupport (>= 5.0.0, < 7.0)
+    htmlcompressor (0.4.0)
     i18n (1.8.8)
       concurrent-ruby (~> 1.0)
     kramdown (2.3.0)
@@ -143,6 +150,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    svg_optimizer (0.2.5)
+      nokogiri
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thor (1.1.0)
@@ -160,6 +169,8 @@ PLATFORMS
 DEPENDENCIES
   bootstrap (~> 5.0.0.beta1)
   bridgetown (~> 0.19.2)
+  bridgetown-inline-svg (~> 1.1.0)
+  bridgetown-minify-html (~> 1.0)
 
 BUNDLED WITH
    2.2.9

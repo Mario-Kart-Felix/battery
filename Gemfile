@@ -21,3 +21,7 @@ gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'bridgetown', '~> 0.19.2'
 
 # gem 'font-awesome-sass', '~> 5.12.0'
+group :bridgetown_plugins do
+  gem 'bridgetown-inline-svg', '~> 1.1.0'
+  gem 'bridgetown-minify-html', '~> 1.0'
+end
