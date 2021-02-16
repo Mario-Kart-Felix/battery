@@ -6,59 +6,59 @@ const componentsContext = require.context("bridgetownComponents", true, /.js$/);
 componentsContext.keys().forEach(componentsContext);
 
 // Burger menus
-document.addEventListener("DOMContentLoaded", function() {
-    // open/close
-    const toggler = document.querySelectorAll('[data-toggle="side-menu"]');
+document.addEventListener("DOMContentLoaded", function () {
+  // open/close
+  const toggler = document.querySelectorAll('[data-toggle="side-menu"]');
 
-    if (toggler.length) {
-        for (var i = 0; i < toggler.length; i++) {
-            const target = toggler[i].getAttribute("data-target");
+  if (toggler.length) {
+    for (var i = 0; i < toggler.length; i++) {
+      const target = toggler[i].getAttribute("data-target");
 
-            if (target.length) {
-                toggler[i].addEventListener("click", function(event) {
-                    event.preventDefault();
-                    const menu = document.querySelector(target);
+      if (target.length) {
+        toggler[i].addEventListener("click", function (event) {
+          event.preventDefault();
+          const menu = document.querySelector(target);
 
-                    if (menu) {
-                        menu.classList.toggle("d-none");
-                    }
-                });
-            }
-        }
+          if (menu) {
+            menu.classList.toggle("d-none");
+          }
+        });
+      }
     }
+  }
 });
 
 //  Objects Store
 var batOjb = {
-    capacity: 3200,
-    capacity_avail: 0.83,
-    totalWh: 241.92,
-    availWh: 200.79,
+  capacity: 3200,
+  capacity_avail: 0.83,
+  totalWh: 241.92,
+  availWh: 200.79,
 };
 // Large Lap
 var lLapOjb = {
-    Wh2Charg: 80,
-    ChargfromQik: 2.5,
+  Wh2Charg: 80,
+  ChargfromQik: 2.5,
 };
 // Med Lap
 var mLapOjb = {
-    Wh2Charg: 60,
-    ChargfromQik: 3.3,
+  Wh2Charg: 60,
+  ChargfromQik: 3.3,
 };
 // small note
 var sNoteOjb = {
-    Wh2Charg: 40,
-    ChargfromQik: 5.0,
+  Wh2Charg: 40,
+  ChargfromQik: 5.0,
 };
 // Ipad Pro
 var iPadOjb = {
-    Wh2Charg: 28,
-    ChargfromQik: 7.2,
+  Wh2Charg: 28,
+  ChargfromQik: 7.2,
 };
 // Large Phone
 var lPhoneOjb = {
-    Wh2Charg: 10,
-    ChargfromQik: 20.1,
+  Wh2Charg: 10,
+  ChargfromQik: 20.1,
 };
 // console.info(batOjb["availWh"])
 
@@ -86,70 +86,72 @@ const lgPhoneId = document.getElementById("lg-phone-id");
 const button = document.getElementById("submit");
 //
 const addBitsUp = (element, element2Add) => {
-    element.addEventListener("click", (event) => {
-        // Callback
-        var i = element2Add.value;
-        // console.log(i);
-        element2Add.value = ++i;
-        // console.log(`i clicked ${i} times`)
-        // event.currentTarget.setAttribute("disabled", "");
-    });
+  element.addEventListener("click", (event) => {
+    // Callback
+    var i = element2Add.value;
+    // console.log(i);
+    element2Add.value = ++i;
+    // console.log(`i clicked ${i} times`)
+    // event.currentTarget.setAttribute("disabled", "");
+  });
 };
 /// calculation logic
 const batteryLogic = () => {
+  var battWatt = batOjb["availWh"];
 
-    var battWatt = batOjb["availWh"]
+  var totalWatt =
+    lLapOjb["Wh2Charg"] * lgLapId.value +
+    mLapOjb["Wh2Charg"] * mdLapId.value +
+    sNoteOjb["Wh2Charg"] * smNoteId.value +
+    iPadOjb["Wh2Charg"] * tablId.value +
+    lPhoneOjb["Wh2Charg"] * lgPhoneId.value;
 
-    var totalWatt = (lLapOjb["Wh2Charg"] * lgLapId.value) + (mLapOjb["Wh2Charg"] * mdLapId.value) + (sNoteOjb["Wh2Charg"] * smNoteId.value) + (iPadOjb["Wh2Charg"] * tablId.value) + (lPhoneOjb["Wh2Charg"] * lgPhoneId.value);
-
-    var result = totalWatt / battWatt
-    // lLapOjb["Wh2Charg"]*lgLapId.value
-    // mLapOjb["Wh2Charg"]*mdLapId.value
-    // sNoteOjb["Wh2Charg"]*smNoteId.value
-    // iPadOjb["Wh2Charg"]*tablId.value
-    // lPhoneOjb["Wh2Charg"]*lgPhoneId.value
-    //
-    //
-    //
-    // (totalWatt / battWatt).ceil
-    //
-    console.info(batOjb["availWh"])
-    console.info(totalWatt)
-    return Math.ceil(result);
+  var result = totalWatt / battWatt;
+  // lLapOjb["Wh2Charg"]*lgLapId.value
+  // mLapOjb["Wh2Charg"]*mdLapId.value
+  // sNoteOjb["Wh2Charg"]*smNoteId.value
+  // iPadOjb["Wh2Charg"]*tablId.value
+  // lPhoneOjb["Wh2Charg"]*lgPhoneId.value
+  //
+  //
+  //
+  // (totalWatt / battWatt).ceil
+  //
+  console.info(batOjb["availWh"]);
+  console.info(totalWatt);
+  return Math.ceil(result);
 };
 
 // clear alerts
 const clearAlert = () => {
-    battId.classList.remove("alert-success");
-    console.info("it worked");
+  battId.classList.remove("alert-success");
+  console.info("it worked");
 };
 
 // lets go SOUP TIME !!!
 window.addEventListener(
-    "mousedown",
-    function() {
-        // could use select
-        clearAlert();
-    },
-    false
+  "mousedown",
+  function () {
+    // could use select
+    clearAlert();
+  },
+  false
 );
 
 // console.info(hoursId.value)
 
 button.addEventListener("click", (event) => {
-    // get all the values bitches
-    // var hours = hoursId.value;
-    var tablets = tablId.value;
-    // console.log(hours);
-    // console.log(tablets);
+  // get all the values bitches
+  // var hours = hoursId.value;
+  var tablets = tablId.value;
+  // console.log(hours);
+  // console.log(tablets);
 
-
-
-    var result = batteryLogic();
-    // console.info(batteryLogic());
-    battId.value = result;
-    battId.classList.add("alert-success");
-    //
+  var result = batteryLogic();
+  // console.info(batteryLogic());
+  battId.value = result;
+  battId.classList.add("alert-success");
+  //
 });
 
 // function calls

@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Hello! This is where you manage which Bridgetown version is used to run.
@@ -16,6 +16,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #
 # Happy Bridgetowning!
 
-gem "bridgetown", "~> 0.19.2"
 gem 'bootstrap', '~> 4.0.0'
+gem 'bridgetown', '~> 0.19.2'
 # gem 'font-awesome-sass', '~> 5.12.0'
