@@ -1,5 +1,5 @@
 [build]
-  command = "yarn deploy && ./bin/netlify.sh"
+  command = "yarn deploy && sh ./bin/netlify.sh"
   publish = "output"
 
 [build.environment]
