@@ -16,6 +16,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #
 # Happy Bridgetowning!
 
-gem 'bootstrap', '~> 4.0.0'
+# gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'bridgetown', '~> 0.19.2'
+
 # gem 'font-awesome-sass', '~> 5.12.0'

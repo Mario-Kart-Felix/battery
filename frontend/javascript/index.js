@@ -143,7 +143,7 @@ window.addEventListener(
 button.addEventListener("click", (event) => {
   // get all the values bitches
   // var hours = hoursId.value;
-  var tablets = tablId.value;
+  // var tablets = tablId.value;
   // console.log(hours);
   // console.log(tablets);
 
