@@ -38,27 +38,38 @@ var batOjb = {
 // Large Lap
 var lLapOjb = {
   Wh2Charg: 80,
+  WhPHour: 15,
   ChargfromQik: 2.5,
 };
 // Med Lap
 var mLapOjb = {
   Wh2Charg: 60,
+  WhPHour: 10,
   ChargfromQik: 3.3,
 };
 // small note
 var sNoteOjb = {
   Wh2Charg: 40,
+  WhPHour: 6,
   ChargfromQik: 5.0,
 };
 // Ipad Pro
 var iPadOjb = {
   Wh2Charg: 28,
+  WhPHour: 4,
   ChargfromQik: 7.2,
 };
 // Large Phone
 var lPhoneOjb = {
   Wh2Charg: 10,
+  WhPHour: 2,
   ChargfromQik: 20.1,
+};
+// Small Phone
+var sPhoneOjb = {
+  Wh2Charg: 5,
+  WhPHour: 1,
+  ChargfromQik: 40.2,
 };
 // console.info(batOjb["availWh"])
 
@@ -84,6 +95,9 @@ const tablId = document.getElementById("tab-id");
 // lg-phone
 const lgPhone = document.getElementById("lg-phone");
 const lgPhoneId = document.getElementById("lg-phone-id");
+// sm-phone
+const smPhone = document.getElementById("sm-phone");
+const smPhoneId = document.getElementById("sm-phone-id");
 // calc button
 const button = document.getElementById("submit");
 const buttonClear = document.getElementById("clear");
@@ -102,24 +116,48 @@ const addBitsUp = (element, element2Add) => {
 const batteryLogic = () => {
   var battWatt = batOjb["availWh"];
 
-  var totalWatt =
-    lLapOjb["Wh2Charg"] * lgLapId.value +
-    mLapOjb["Wh2Charg"] * mdLapId.value +
-    sNoteOjb["Wh2Charg"] * smNoteId.value +
-    iPadOjb["Wh2Charg"] * tablId.value +
-    lPhoneOjb["Wh2Charg"] * lgPhoneId.value;
+  if (hours) {
+    // total hours =
+    //
+    //
+    var totalWatt =
+      (lLapOjb["WhPHour"] * lgLapId.value +
+        mLapOjb["WhPHour"] * mdLapId.value +
+        sNoteOjb["WhPHour"] * smNoteId.value +
+        iPadOjb["WhPHour"] * tablId.value +
+        lPhoneOjb["WhPHour"] * lgPhoneId.value +
+        sPhoneOjb["WhPHour"] * smPhoneId.value) *
+      hours.value;
 
-  var result = totalWatt / battWatt;
+    console.log("inside hours calc");
+    console.info(`${totalWatt} Total watts`);
+  }
+  //
+  else if (battId) {
+    // standard calc
+    var totalWatt =
+      lLapOjb["Wh2Charg"] * lgLapId.value +
+      mLapOjb["Wh2Charg"] * mdLapId.value +
+      sNoteOjb["Wh2Charg"] * smNoteId.value +
+      iPadOjb["Wh2Charg"] * tablId.value +
+      lPhoneOjb["Wh2Charg"] * lgPhoneId.value +
+      sPhoneOjb["Wh2Charg"] * smPhoneId.value;
+
+    console.log("inside packs to charge calc");
+    console.info(`${totalWatt} Total watts`);
+  }
   // lLapOjb["Wh2Charg"]*lgLapId.value
   // mLapOjb["Wh2Charg"]*mdLapId.value
   // sNoteOjb["Wh2Charg"]*smNoteId.value
   // iPadOjb["Wh2Charg"]*tablId.value
   // lPhoneOjb["Wh2Charg"]*lgPhoneId.value
-  //
+  else {
+    console.info("nothing to calc bro");
+  }
   //
   //
   // (totalWatt / battWatt).ceil
-  //
+  var result = totalWatt / battWatt;
   // console.info(batOjb["availWh"]);
   // console.info(totalWatt);
   return Math.ceil(result);
@@ -141,27 +179,20 @@ window.addEventListener(
   false
 );
 
-// document.querySelectorAll('*[id]').reset(); value.reset()
 //
 buttonClear.addEventListener("click", (event) => {
   var clear = document.querySelectorAll("*[id]");
-  // battId.classList.add("alert-success");
   clear.forEach((element) => {
     if (element.value >= 1) {
-      // console.log(element.value);
-      element.value == 0;
+      element.value = 0;
     }
     //
   });
 });
-// console.info(hoursId.value)
 
 button.addEventListener("click", (event) => {
   if (battId) {
     // get all the values bitches
-
-    // console.log(hours);
-    // console.log(tablets);
 
     var result = batteryLogic();
     // console.info(batteryLogic());
