@@ -4,46 +4,11 @@ layout: page
 title:
 permalink: /battery/
 ---
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-          <ul class="dropdown-menu" aria-labelledby="dropdown01">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-
 
 <div class="container">
   <div class="row text-center py-3">
     <h3>Qikpacs Requred to re-charge below</h3>
-    <!--   <h3>for<input class="input-group-text justify-center mx-auto" id="hrs-id" type="text" value="0">hours</h3> -->
+    <h3>for<input class="input-group-text justify-center mx-auto my-3" id="hrs-id" type="text" value="0">hours</h3>
   </div>
   <!-- Battery Needed -->
   <div class="row flex text-center justify-content-center">
@@ -65,7 +30,7 @@ permalink: /battery/
   <div class="row flex text-center justify-content-center pt-5 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12">
       <h4 id="lg-lap">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Large Laptop
+        <i class="bi bi-laptop-fill"></i> Large Laptop
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
@@ -89,7 +54,7 @@ permalink: /battery/
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <h4 id="md-lap">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Medium Laptop
+        <i class="bi bi-laptop"></i></i> Medium Laptop
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
@@ -109,11 +74,11 @@ permalink: /battery/
       </div>
     </div>
   </div>
-  <!-- small notebook -->
+  <!-- small notebook  -->
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <h4 id="sm-note">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Small Notebook
+        <i class="bi bi-tablet-landscape"></i> Small Notebook
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
@@ -136,7 +101,7 @@ permalink: /battery/
   <!-- Tablet  -->
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-      <h4 id="tabl"><i class="fa fa-tablet" aria-hidden="true"></i>Tablet</h4>
+      <h4 id="tabl"><i class="bi bi-tablet"></i> Tablet</h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <div class="input-group">
@@ -159,7 +124,7 @@ permalink: /battery/
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <h4 id="lg-phone">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Large Phone
+        <i class="bi bi-phone"></i></i> Large Phone
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
@@ -185,6 +150,7 @@ permalink: /battery/
       <button type="button" id="submit" class="btn btn-primary btn-lg">
         Calculate
       </button>
+      <button type="button" id="clear" class="btn btn-outline-secondary btn-lg">Clear</button>
     </div>
   </div>
   <!-- end container -->

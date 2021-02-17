@@ -6,27 +6,27 @@ const componentsContext = require.context("bridgetownComponents", true, /.js$/);
 componentsContext.keys().forEach(componentsContext);
 
 // Burger menus
-document.addEventListener("DOMContentLoaded", function () {
-  // open/close
-  const toggler = document.querySelectorAll('[data-toggle="side-menu"]');
+// document.addEventListener("DOMContentLoaded", function () {
+//   // open/close
+//   const toggler = document.querySelectorAll('[data-toggle="side-menu"]');
 
-  if (toggler.length) {
-    for (var i = 0; i < toggler.length; i++) {
-      const target = toggler[i].getAttribute("data-target");
+//   if (toggler.length) {
+//     for (var i = 0; i < toggler.length; i++) {
+//       const target = toggler[i].getAttribute("data-target");
 
-      if (target.length) {
-        toggler[i].addEventListener("click", function (event) {
-          event.preventDefault();
-          const menu = document.querySelector(target);
+//       if (target.length) {
+//         toggler[i].addEventListener("click", function (event) {
+//           event.preventDefault();
+//           const menu = document.querySelector(target);
 
-          if (menu) {
-            menu.classList.toggle("d-none");
-          }
-        });
-      }
-    }
-  }
-});
+//           if (menu) {
+//             menu.classList.toggle("d-none");
+//           }
+//         });
+//       }
+//     }
+//   }
+// });
 
 //  Objects Store
 var batOjb = {
@@ -66,6 +66,8 @@ var lPhoneOjb = {
 const batt = document.getElementById("batt");
 const battId = document.getElementById("bat-id");
 // hours
+var hours = document.getElementById("hrs-id");
+
 // const hoursId = document.getElementById('hrs-id');
 // large laptops
 const lgLap = document.getElementById("lg-lap");
@@ -84,6 +86,7 @@ const lgPhone = document.getElementById("lg-phone");
 const lgPhoneId = document.getElementById("lg-phone-id");
 // calc button
 const button = document.getElementById("submit");
+const buttonClear = document.getElementById("clear");
 //
 const addBitsUp = (element, element2Add) => {
   element.addEventListener("click", (event) => {
@@ -117,8 +120,8 @@ const batteryLogic = () => {
   //
   // (totalWatt / battWatt).ceil
   //
-  console.info(batOjb["availWh"]);
-  console.info(totalWatt);
+  // console.info(batOjb["availWh"]);
+  // console.info(totalWatt);
   return Math.ceil(result);
 };
 
@@ -138,20 +141,33 @@ window.addEventListener(
   false
 );
 
+// document.querySelectorAll('*[id]').reset(); value.reset()
+//
+buttonClear.addEventListener("click", (event) => {
+  var clear = document.querySelectorAll("*[id]");
+  // battId.classList.add("alert-success");
+  clear.forEach((element) => {
+    if (element.value >= 1) {
+      // console.log(element.value);
+      element.value == 0;
+    }
+    //
+  });
+});
 // console.info(hoursId.value)
 
 button.addEventListener("click", (event) => {
-  // get all the values bitches
-  // var hours = hoursId.value;
-  // var tablets = tablId.value;
-  // console.log(hours);
-  // console.log(tablets);
+  if (battId) {
+    // get all the values bitches
 
-  var result = batteryLogic();
-  // console.info(batteryLogic());
-  battId.value = result;
-  battId.classList.add("alert-success");
-  //
+    // console.log(hours);
+    // console.log(tablets);
+
+    var result = batteryLogic();
+    // console.info(batteryLogic());
+    battId.value = result;
+    battId.classList.add("alert-success");
+  } //
 });
 
 // function calls
