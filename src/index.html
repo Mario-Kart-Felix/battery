@@ -11,7 +11,7 @@ layout: home
   <!-- Battery Needed -->
   <div class="row flex text-center justify-content-center">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-      <h4 id="batt">Qikpacs Required</h4>
+      <h4 id="batt"><i class="bi bi-battery-charging"></i>  Qikpacs Required</h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <div class="input-group center-block">
@@ -28,11 +28,11 @@ layout: home
   <div class="row flex text-center justify-content-center pt-5 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12">
       <h4 id="lg-lap">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Large Laptop
+        <i class="bi bi-laptop-fill"></i> Large Laptop
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-      <div class="input-group">
+      <div class="input-group ">
         <label for="exampleFormControlSelect1"></label>
         <select
           class="form-control input-group-text justify-center mx-auto"
@@ -52,7 +52,7 @@ layout: home
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <h4 id="md-lap">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Medium Laptop
+        <i class="bi bi-laptop"></i></i> Medium Laptop
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
@@ -72,11 +72,11 @@ layout: home
       </div>
     </div>
   </div>
-  <!-- small notebook -->
+  <!-- small notebook  -->
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <h4 id="sm-note">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Small Notebook
+        <i class="bi bi-tablet-landscape"></i> Small Notebook
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
@@ -99,7 +99,7 @@ layout: home
   <!-- Tablet  -->
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-      <h4 id="tabl"><i class="fa fa-tablet" aria-hidden="true"></i>Tablet</h4>
+      <h4 id="tabl"><i class="bi bi-tablet"></i> Tablet</h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <div class="input-group">
@@ -122,7 +122,7 @@ layout: home
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
       <h4 id="lg-phone">
-        <i class="fa fa-tablet" aria-hidden="true"></i>Large Phone
+        <i class="bi bi-phone"></i></i> Large Phone
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
@@ -142,19 +142,42 @@ layout: home
       </div>
     </div>
   </div>
+   <!-- Small Phone -->
+  <div class="row flex text-center justify-content-center py-1 px-4">
+    <div class="col-lg-6 col-md-6 col-sm-12 p-2">
+      <h4 id="sm-phone">
+        <i class="bi bi-phone-vibrate"></i></i> Small Phone
+      </h4>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 p-2">
+      <div class="input-group">
+        <label for="exampleFormControlSelect1"></label>
+        <select
+          class="form-control input-group-text justify-center mx-auto"
+          id="sm-phone-id"
+        >
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+  </div>
   <!--  start button -->
   <div class="row flex text-center justify-content-center">
     <div class="col-lg-6 col-md-6 col-sm-12 py-4">
       <button type="button" id="submit" class="btn btn-primary btn-lg">
         Calculate
       </button>
+      <button type="button" id="clear" class="btn btn-outline-secondary btn-lg">Clear</button>
     </div>
   </div>
   <!-- end container -->
 </div>
 <!-- /.container -->
-
-
   </body>
 </html>
 

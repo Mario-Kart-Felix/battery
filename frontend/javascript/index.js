@@ -118,8 +118,7 @@ const batteryLogic = () => {
 
   if (hours) {
     // total hours =
-    //
-    //
+
     var totalWatt =
       (lLapOjb["WhPHour"] * lgLapId.value +
         mLapOjb["WhPHour"] * mdLapId.value +
