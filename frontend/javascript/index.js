@@ -77,28 +77,34 @@ var sPhoneOjb = {
 const batt = document.getElementById("batt");
 const battId = document.getElementById("bat-id");
 // hours
+// var hoursHtml = document.getElementById("hrs-id");
 var hours = document.getElementById("hrs-id");
 
 // const hoursId = document.getElementById('hrs-id');
 // large laptops
 const lgLap = document.getElementById("lg-lap");
 const lgLapId = document.getElementById("lg-lap-id");
+
 // medium laptops
 const mdLap = document.getElementById("md-lap");
 const mdLapId = document.getElementById("md-lap-id");
+
 // small notepad
 const smNote = document.getElementById("sm-note");
 const smNoteId = document.getElementById("sm-note-id");
+
 // tablets iPad Pro
 const tabl = document.getElementById("tabl");
 const tablId = document.getElementById("tab-id");
+
 // lg-phone
 const lgPhone = document.getElementById("lg-phone");
 const lgPhoneId = document.getElementById("lg-phone-id");
+
 // sm-phone
 const smPhone = document.getElementById("sm-phone");
 const smPhoneId = document.getElementById("sm-phone-id");
-// calc button
+
 const button = document.getElementById("submit");
 const buttonClear = document.getElementById("clear");
 //
@@ -200,6 +206,11 @@ button.addEventListener("click", (event) => {
   } //
 });
 
-// function calls
-// addBitsUp(batt, battId);
+// function calls hoursHtml
+// addBitsUp(hoursHtml, hours);
+addBitsUp(lgLap, lgLapId);
+addBitsUp(mdLap, mdLapId);
+addBitsUp(smNote, smNoteId);
 addBitsUp(tabl, tablId);
+addBitsUp(lgPhone, lgPhoneId);
+addBitsUp(smPhone, smPhoneId);
