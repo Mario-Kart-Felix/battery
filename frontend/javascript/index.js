@@ -1,3 +1,4 @@
+//beautifytools.com/javascript-validator.php
 import "index.scss";
 import "bootstrap";
 
@@ -77,7 +78,7 @@ var sPhoneOjb = {
 const batt = document.getElementById("batt");
 const battId = document.getElementById("bat-id");
 // hours
-// var hoursHtml = document.getElementById("hrs-id");
+var hoursHtml = document.getElementById("hoursHtml");
 var hours = document.getElementById("hrs-id");
 
 // const hoursId = document.getElementById('hrs-id');
@@ -183,7 +184,19 @@ window.addEventListener(
   },
   false
 );
-
+// change chours
+const changeHours = () => {
+  if (hours) {
+    hours.addEventListener("click", (event) => {
+      // Callback
+      if (hours.value < 2) {
+        hoursHtml.lastChild.data = " Hour";
+      } else {
+        hoursHtml.lastChild.data = " Hours";
+      }
+    });
+  }
+};
 //
 buttonClear.addEventListener("click", (event) => {
   var clear = document.querySelectorAll("*[id]");
@@ -194,7 +207,7 @@ buttonClear.addEventListener("click", (event) => {
     //
   });
 });
-
+// button calculate
 button.addEventListener("click", (event) => {
   if (battId) {
     // get all the values bitches
@@ -208,6 +221,7 @@ button.addEventListener("click", (event) => {
 
 // function calls hoursHtml
 // addBitsUp(hoursHtml, hours);
+changeHours();
 addBitsUp(lgLap, lgLapId);
 addBitsUp(mdLap, mdLapId);
 addBitsUp(smNote, smNoteId);
