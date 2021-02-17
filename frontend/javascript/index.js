@@ -136,7 +136,7 @@ const batteryLogic = () => {
       hours.value;
 
     console.log("inside hours calc");
-    console.info(`${totalWatt} Total watts`);
+    console.info(`${totalWatt} Total watts from ${hours.value} hrs`);
   }
   //
   else if (battId) {
@@ -172,7 +172,7 @@ const batteryLogic = () => {
 // clear alerts
 const clearAlert = () => {
   battId.classList.remove("alert-success");
-  console.info("it worked");
+  // console.info("it worked");
 };
 
 // lets go SOUP TIME !!!
@@ -219,8 +219,7 @@ button.addEventListener("click", (event) => {
   } //
 });
 
-// function calls hoursHtml
-// addBitsUp(hoursHtml, hours);
+// function calls
 changeHours();
 addBitsUp(lgLap, lgLapId);
 addBitsUp(mdLap, mdLapId);
