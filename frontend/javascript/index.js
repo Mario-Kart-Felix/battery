@@ -190,9 +190,12 @@ const changeHours = () => {
     hours.addEventListener("click", (event) => {
       // Callback
       if (hours.value < 2) {
-        hoursHtml.lastChild.data = " Hour";
+        hoursHtml.lastChild.data = ` ${hours.value} Hour`;
+        // } else if (buttonClear.onclick()) {
+        //   console.log("clear in hours")
+        // }
       } else {
-        hoursHtml.lastChild.data = " Hours";
+        hoursHtml.lastChild.data = ` ${hours.value} Hours`;
       }
     });
   }
@@ -203,6 +206,7 @@ buttonClear.addEventListener("click", (event) => {
   clear.forEach((element) => {
     if (element.value >= 1) {
       element.value = 0;
+      hoursHtml.lastChild.data = ` ${hours.value} Hour`;
     }
     //
   });
