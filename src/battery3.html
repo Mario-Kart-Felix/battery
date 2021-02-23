@@ -14,7 +14,7 @@ permalink: /battery-slide/
 
       <div class="input-group justify-center mx-auto py-3 px-4">
         <label for="customRange3" class="form-label"></label>
-<input type="range" class="form-range" min="1" max="9" step="1.0" id="hrs-id" value="1">
+<input type="range" class="form-range" min="1" max="9" step="1.0" id="hrs-id" value="2">
         <!-- <label for="exampleFormControlSelect1"></label>
         <select class="form-control input-group-text" id="hrs-id" >
           <option>0</option>
@@ -29,7 +29,7 @@ permalink: /battery-slide/
           <option>9</option>
         </select>
       </div> -->
-        <h3 class="mx-auto" id="hoursHtml"><i class="bi bi-clock-history"></i>1 Hour</h3>
+        <h3 class="mx-auto" id="hoursHtml"><i class="bi bi-clock-history"></i> 2 Hours</h3>
 
     </div>
 
@@ -58,10 +58,11 @@ permalink: /battery-slide/
     <div class="col-lg-6 col-md-6 col-sm-12">
       <h4 id="lg-lap">
         <i class="bi bi-laptop-fill"></i> Large Laptop
-      </h4>
+      = 0</h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-      <div class="input-group ">
+      <input type="range" class="form-range" min="0" max="5" step="1.0" id="lg-lap-id" value="0">
+      <!-- <div class="input-group ">
         <label for="exampleFormControlSelect1"></label>
         <select
           class="form-control input-group-text justify-center mx-auto"
@@ -74,18 +75,19 @@ permalink: /battery-slide/
           <option>4</option>
           <option>5</option>
         </select>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- medium laptop -->
   <div class="row flex text-center justify-content-center py-1 px-4">
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-      <h4 id="md-lap">
+      <h4 id="md-lap">0 x
         <i class="bi bi-laptop"></i></i> Medium Laptop
       </h4>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-      <div class="input-group">
+      <input type="range" class="form-range" min="0" max="5" step="1.0" id="md-lap-id" value="0">
+      <!-- <div class="input-group">
         <label for="exampleFormControlSelect1"></label>
         <select
           class="form-control input-group-text justify-center mx-auto"
@@ -98,7 +100,7 @@ permalink: /battery-slide/
           <option>4</option>
           <option>5</option>
         </select>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- small notebook  -->

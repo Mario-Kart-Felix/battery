@@ -184,7 +184,7 @@ window.addEventListener(
   },
   false
 );
-// change chours
+// change hours
 const changeHours = () => {
   if (hours) {
     hours.addEventListener("click", (event) => {
@@ -221,6 +221,17 @@ button.addEventListener("click", (event) => {
     battId.value = result;
     battId.classList.add("alert-success");
   } //
+});
+// get all the slider classes elements
+var elements = document.getElementsByClassName("classname");
+
+var myFunction = function() {
+    var attribute = this.getAttribute("data-myattribute");
+    alert(attribute);
+};
+
+Array.from(elements).forEach(function(element) {
+      element.addEventListener('click', myFunction);
 });
 
 // function calls
