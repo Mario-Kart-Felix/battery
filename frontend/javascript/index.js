@@ -228,19 +228,21 @@ var elements = document.getElementsByClassName("form-range slide");
 var addSliders = function () {
   var attribute = this.getAttribute("data-myattribute");
   // alert(attribute);
-  // console.log("count");
-  // console.log(elements[0]);
 };
 
 Array.from(elements).forEach(function (element) {
   element.addEventListener("change", function () {
     this.setAttribute("value", this.value);
-    console.log(element.value);
-    console.log(element);
-    console.log(
+    // console.log(element.value);
+
+    // get the text
+    var grabbedText =
       element.parentElement.childNodes[0].parentElement.lastElementChild
-        .parentElement.previousElementSibling.innerHTML
-    );
+        .parentElement.previousElementSibling.innerHTML;
+    var changedText = grabbedText.replace(/\d\sx/, `${element.value} x`);
+    // console.log(grabbedText);
+    // return text
+    element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
   });
   element.addEventListener("click", addSliders);
 });
