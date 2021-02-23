@@ -202,7 +202,10 @@ const changeHours = () => {
 };
 //
 buttonClear.addEventListener("click", (event) => {
+  // vars
   var clear = document.querySelectorAll("*[id]");
+  var elements = document.getElementsByClassName("form-range slide");
+ // clear vals
   clear.forEach((element) => {
     if (element.value >= 1) {
       element.value = 0;
@@ -210,6 +213,21 @@ buttonClear.addEventListener("click", (event) => {
     }
     //
   });
+  // clear text
+  Array.from(elements).forEach(function (element) {
+
+    // get the text
+    var grabbedText =
+      element.parentElement.childNodes[0].parentElement.lastElementChild
+        .parentElement.previousElementSibling.innerHTML;
+
+    if (grabbedText.includes("x") ) {
+      var changedText = grabbedText.replace(/\d\sx/, ``);
+      element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
+    }// change line with value
+
+});
+
 });
 // button calculate
 button.addEventListener("click", (event) => {
@@ -233,14 +251,18 @@ var addSliders = function () {
 Array.from(elements).forEach(function (element) {
   element.addEventListener("change", function () {
     this.setAttribute("value", this.value);
-    // console.log(element.value);
-
+    // console.log(element);
     // get the text
     var grabbedText =
       element.parentElement.childNodes[0].parentElement.lastElementChild
         .parentElement.previousElementSibling.innerHTML;
-    var changedText = grabbedText.replace(/\d\sx/, `${element.value} x`);
-    // console.log(grabbedText);
+
+    if (grabbedText.includes("x") ) {
+       var changedText = grabbedText.replace(/\d\sx/, `${element.value} x`);
+    }// change line with value
+    else {
+       var changedText = grabbedText.replace(/><i/, `> ${element.value} x <i`);
+    }// console.log(grabbedText.includes("x"));
     // return text
     element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
   });
