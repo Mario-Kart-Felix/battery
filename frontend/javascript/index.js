@@ -223,15 +223,26 @@ button.addEventListener("click", (event) => {
   } //
 });
 // get all the slider classes elements
-var elements = document.getElementsByClassName("classname");
+var elements = document.getElementsByClassName("form-range slide");
 
-var myFunction = function() {
-    var attribute = this.getAttribute("data-myattribute");
-    alert(attribute);
+var addSliders = function () {
+  var attribute = this.getAttribute("data-myattribute");
+  // alert(attribute);
+  // console.log("count");
+  // console.log(elements[0]);
 };
 
-Array.from(elements).forEach(function(element) {
-      element.addEventListener('click', myFunction);
+Array.from(elements).forEach(function (element) {
+  element.addEventListener("change", function () {
+    this.setAttribute("value", this.value);
+    console.log(element.value);
+    console.log(element);
+    console.log(
+      element.parentElement.childNodes[0].parentElement.lastElementChild
+        .parentElement.previousElementSibling.innerHTML
+    );
+  });
+  element.addEventListener("click", addSliders);
 });
 
 // function calls
