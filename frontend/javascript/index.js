@@ -257,11 +257,13 @@ Array.from(elements).forEach(function (element) {
       element.parentElement.childNodes[0].parentElement.lastElementChild
         .parentElement.previousElementSibling.innerHTML;
 
-    if (grabbedText.includes("x") ) {
+    if (grabbedText.includes("x")) {
+      // console.log(grabbedText);
        var changedText = grabbedText.replace(/\d\sx/, `${element.value} x`);
     }// change line with value
     else {
-       var changedText = grabbedText.replace(/><i/, `> ${element.value} x <i`);
+      // console.log(grabbedText);
+       var changedText = grabbedText.replace(/(><i|>..<i)/, `> ${element.value} x <i`);
     }// console.log(grabbedText.includes("x"));
     // return text
     element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
