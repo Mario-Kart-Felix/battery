@@ -109,16 +109,16 @@ const smPhoneId = document.getElementById("sm-phone-id");
 const button = document.getElementById("submit");
 const buttonClear = document.getElementById("clear");
 //
-const addBitsUp = (element, element2Add) => {
-  element.addEventListener("click", (event) => {
-    // Callback
-    var i = element2Add.value;
-    // console.log(i);
-    element2Add.value = ++i;
-    // console.log(`i clicked ${i} times`)
-    // event.currentTarget.setAttribute("disabled", "");
-  });
-};
+// const addBitsUp = (element, element2Add) => {
+//   element.addEventListener("click", (event) => {
+//     // Callback
+//     var i = element2Add.value;
+//     // console.log(i);
+//     element2Add.value = ++i;
+//     // console.log(`i clicked ${i} times`)
+//     // event.currentTarget.setAttribute("disabled", "");
+//   });
+// };
 /// calculation logic
 const batteryLogic = () => {
   var battWatt = batOjb["availWh"];
@@ -264,7 +264,7 @@ Array.from(elements).forEach(function (element) {
     else {
       // console.log(grabbedText);
        var changedText = grabbedText.replace(/(><i|>..<i)/, `> ${element.value} x <i`);
-    }// console.log(grabbedText.includes("x"));
+    }
     // return text
     element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
   });
@@ -273,9 +273,9 @@ Array.from(elements).forEach(function (element) {
 
 // function calls
 changeHours();
-addBitsUp(lgLap, lgLapId);
-addBitsUp(mdLap, mdLapId);
-addBitsUp(smNote, smNoteId);
-addBitsUp(tabl, tablId);
-addBitsUp(lgPhone, lgPhoneId);
-addBitsUp(smPhone, smPhoneId);
+// addBitsUp(lgLap, lgLapId);
+// addBitsUp(mdLap, mdLapId);
+// addBitsUp(smNote, smNoteId);
+// addBitsUp(tabl, tablId);
+// addBitsUp(lgPhone, lgPhoneId);
+// addBitsUp(smPhone, smPhoneId);
