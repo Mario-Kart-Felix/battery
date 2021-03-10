@@ -184,6 +184,17 @@ window.addEventListener(
   },
   false
 );
+// result add function
+const giveResult = function () {
+  if (battId) {
+    // get all the values bitches
+    var result = batteryLogic();
+    // console.info(batteryLogic());
+    battId.value = result;
+    battId.classList.add("alert-success");
+  } //
+};
+
 // change hours
 const changeHours = () => {
   if (hours) {
@@ -197,6 +208,7 @@ const changeHours = () => {
       } else {
         hoursHtml.lastChild.data = ` ${hours.value} Hours`;
       }
+      giveResult();
     });
   }
 };
@@ -205,7 +217,7 @@ buttonClear.addEventListener("click", (event) => {
   // vars
   var clear = document.querySelectorAll("*[id]");
   var elements = document.getElementsByClassName("form-range slide");
- // clear vals
+  // clear vals
   clear.forEach((element) => {
     if (element.value >= 1) {
       element.value = 0;
@@ -215,37 +227,29 @@ buttonClear.addEventListener("click", (event) => {
   });
   // clear text
   Array.from(elements).forEach(function (element) {
-
     // get the text
     var grabbedText =
       element.parentElement.childNodes[0].parentElement.lastElementChild
         .parentElement.previousElementSibling.innerHTML;
-
-    if (grabbedText.includes("x") ) {
+    // element.parentElement.querySelector("h4")
+    //element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML;
+    if (grabbedText.includes("x")) {
       var changedText = grabbedText.replace(/\d\sx/, ``);
       element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
-    }// change line with value
-
-});
-
+    } // change line with value
+  });
 });
 // button calculate
 button.addEventListener("click", (event) => {
-  if (battId) {
-    // get all the values bitches
-
-    var result = batteryLogic();
-    // console.info(batteryLogic());
-    battId.value = result;
-    battId.classList.add("alert-success");
-  } //
+  giveResult();
 });
 // get all the slider classes elements
 var elements = document.getElementsByClassName("form-range slide");
 
 var addSliders = function () {
-  var attribute = this.getAttribute("data-myattribute");
+  // var attribute = this.getAttribute("data-myattribute");
   // alert(attribute);
+  giveResult();
 };
 
 Array.from(elements).forEach(function (element) {
@@ -259,11 +263,14 @@ Array.from(elements).forEach(function (element) {
 
     if (grabbedText.includes("x")) {
       // console.log(grabbedText);
-       var changedText = grabbedText.replace(/\d\sx/, `${element.value} x`);
-    }// change line with value
+      var changedText = grabbedText.replace(/\d\sx/, `${element.value} x`);
+    } // change line with value
     else {
       // console.log(grabbedText);
-       var changedText = grabbedText.replace(/(><i|>..<i)/, `> ${element.value} x <i`);
+      var changedText = grabbedText.replace(
+        /(><i|>..<i)/,
+        `> ${element.value} x <i`
+      );
     }
     // return text
     element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
