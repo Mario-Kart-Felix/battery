@@ -234,7 +234,7 @@ buttonClear.addEventListener("click", (event) => {
     // element.parentElement.querySelector("h4")
     //element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML;
     if (grabbedText.includes("x")) {
-      var changedText = grabbedText.replace(/\d\sx/, ``);
+      var changedText = grabbedText.replace(/\d{1,2}\sx/, ``);
       element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
     } // change line with value
   });
@@ -263,7 +263,7 @@ Array.from(elements).forEach(function (element) {
 
     if (grabbedText.includes("x")) {
       // console.log(grabbedText);
-      var changedText = grabbedText.replace(/\d{1,3}\sx/, `${element.value} x`);
+      var changedText = grabbedText.replace(/\d{1,2}\sx/, `${element.value} x`);
     } // change line with value
     else {
       // console.log(grabbedText);
