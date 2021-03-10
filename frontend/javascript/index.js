@@ -263,7 +263,7 @@ Array.from(elements).forEach(function (element) {
 
     if (grabbedText.includes("x")) {
       // console.log(grabbedText);
-      var changedText = grabbedText.replace(/\d\sx/, `${element.value} x`);
+      var changedText = grabbedText.replace(/\d{1,3}\sx/, `${element.value} x`);
     } // change line with value
     else {
       // console.log(grabbedText);
