@@ -80,6 +80,9 @@ const battId = document.getElementById("bat-id");
 // hours
 var hoursHtml = document.getElementById("hoursHtml");
 var hours = document.getElementById("hrs-id");
+// power
+const power = document.getElementById("power");
+const powerId = document.getElementById("power-id");
 
 // const hoursId = document.getElementById('hrs-id');
 // large laptops
@@ -160,18 +163,27 @@ const batteryLogic = () => {
   else {
     console.info("nothing to calc bro");
   }
-  //
-  //
   // (totalWatt / battWatt).ceil
-  var result = totalWatt / battWatt;
+  // battery resutl
+  var resultRaw = totalWatt / battWatt;
+  var result = Math.ceil(resultRaw);
+
+  // result object
+  var resultObj = {
+    wattHours: totalWatt,
+    result: result,
+  };
+  //
+
   // console.info(batOjb["availWh"]);
   // console.info(totalWatt);
-  return Math.ceil(result);
+  return resultObj;
 };
 
 // clear alerts
 const clearAlert = () => {
   battId.classList.remove("alert-success");
+  powerId.classList.remove("alert-warning");
   // console.info("it worked");
 };
 
@@ -190,8 +202,15 @@ const giveResult = function () {
     // get all the values bitches
     var result = batteryLogic();
     // console.info(batteryLogic());
-    battId.value = result;
+    battId.value = result.result;
     battId.classList.add("alert-success");
+  } //
+  if (powerId) {
+    // get all the values bitches
+    var result = batteryLogic();
+    // console.info(batteryLogic());
+    powerId.value = result.wattHours;
+    powerId.classList.add("alert-warning");
   } //
 };
 
