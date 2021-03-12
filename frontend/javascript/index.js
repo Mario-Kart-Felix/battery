@@ -217,13 +217,23 @@ const giveResult = function () {
 // change hours
 const changeHours = () => {
   if (hours) {
-    hours.addEventListener("click", (event) => {
+    // hours.addEventListener("click", (event) => {
+    //   // Callback
+    //   if (hours.value < 2) {
+    //     hoursHtml.lastChild.data = ` ${hours.value} Hour`;
+    //     // } else if (buttonClear.onclick()) {
+    //     //   console.log("clear in hours")
+    //     // }
+    //   } else {
+    //     hoursHtml.lastChild.data = ` ${hours.value} Hours`;
+    //   }
+    //   giveResult();
+    // });
+
+    hours.addEventListener("input", (event) => {
       // Callback
       if (hours.value < 2) {
         hoursHtml.lastChild.data = ` ${hours.value} Hour`;
-        // } else if (buttonClear.onclick()) {
-        //   console.log("clear in hours")
-        // }
       } else {
         hoursHtml.lastChild.data = ` ${hours.value} Hours`;
       }
@@ -294,7 +304,7 @@ Array.from(elements).forEach(function (element) {
     // return text
     element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
   });
-  element.addEventListener("click", addSliders);
+  element.addEventListener("input", addSliders);
 });
 
 // function calls
