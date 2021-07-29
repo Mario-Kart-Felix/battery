@@ -1,34 +1,3 @@
-//beautifytools.com/javascript-validator.php
-import "index.scss";
-import "bootstrap";
-
-// Import all javascript files from src/_components
-const componentsContext = require.context("bridgetownComponents", true, /.js$/);
-componentsContext.keys().forEach(componentsContext);
-
-// Burger menus
-// document.addEventListener("DOMContentLoaded", function () {
-//   // open/close
-//   const toggler = document.querySelectorAll('[data-toggle="side-menu"]');
-
-//   if (toggler.length) {
-//     for (var i = 0; i < toggler.length; i++) {
-//       const target = toggler[i].getAttribute("data-target");
-
-//       if (target.length) {
-//         toggler[i].addEventListener("click", function (event) {
-//           event.preventDefault();
-//           const menu = document.querySelector(target);
-
-//           if (menu) {
-//             menu.classList.toggle("d-none");
-//           }
-//         });
-//       }
-//     }
-//   }
-// });
-
 //  Objects Store
 var batOjb = {
   capacity: 3200,
@@ -112,16 +81,7 @@ const smPhoneId = document.getElementById("sm-phone-id");
 const button = document.getElementById("submit");
 const buttonClear = document.getElementById("clear");
 //
-// const addBitsUp = (element, element2Add) => {
-//   element.addEventListener("click", (event) => {
-//     // Callback
-//     var i = element2Add.value;
-//     // console.log(i);
-//     element2Add.value = ++i;
-//     // console.log(`i clicked ${i} times`)
-//     // event.currentTarget.setAttribute("disabled", "");
-//   });
-// };
+
 /// calculation logic
 const batteryLogic = () => {
   var battWatt = batOjb["availWh"];
@@ -154,13 +114,7 @@ const batteryLogic = () => {
 
     console.log("inside packs to charge calc");
     console.info(`${totalWatt} Total watts`);
-  }
-  // lLapOjb["Wh2Charg"]*lgLapId.value
-  // mLapOjb["Wh2Charg"]*mdLapId.value
-  // sNoteOjb["Wh2Charg"]*smNoteId.value
-  // iPadOjb["Wh2Charg"]*tablId.value
-  // lPhoneOjb["Wh2Charg"]*lgPhoneId.value
-  else {
+  } else {
     console.info("nothing to calc bro");
   }
   // (totalWatt / battWatt).ceil
@@ -175,8 +129,6 @@ const batteryLogic = () => {
   };
   //
 
-  // console.info(batOjb["availWh"]);
-  // console.info(totalWatt);
   return resultObj;
 };
 
@@ -217,19 +169,6 @@ const giveResult = function () {
 // change hours
 const changeHours = () => {
   if (hours) {
-    // hours.addEventListener("click", (event) => {
-    //   // Callback
-    //   if (hours.value < 2) {
-    //     hoursHtml.lastChild.data = ` ${hours.value} Hour`;
-    //     // } else if (buttonClear.onclick()) {
-    //     //   console.log("clear in hours")
-    //     // }
-    //   } else {
-    //     hoursHtml.lastChild.data = ` ${hours.value} Hours`;
-    //   }
-    //   giveResult();
-    // });
-
     hours.addEventListener("input", (event) => {
       // Callback
       if (hours.value < 2) {
@@ -260,8 +199,7 @@ buttonClear.addEventListener("click", (event) => {
     var grabbedText =
       element.parentElement.childNodes[0].parentElement.lastElementChild
         .parentElement.previousElementSibling.innerHTML;
-    // element.parentElement.querySelector("h4")
-    //element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML;
+
     if (grabbedText.includes("x")) {
       var changedText = grabbedText.replace(/\d{1,2}\sx/, ``);
       element.parentElement.childNodes[0].parentElement.lastElementChild.parentElement.previousElementSibling.innerHTML = changedText;
@@ -276,8 +214,6 @@ button.addEventListener("click", (event) => {
 var elements = document.getElementsByClassName("form-range slide");
 
 var addSliders = function () {
-  // var attribute = this.getAttribute("data-myattribute");
-  // alert(attribute);
   giveResult();
 };
 
@@ -309,9 +245,3 @@ Array.from(elements).forEach(function (element) {
 
 // function calls
 changeHours();
-// addBitsUp(lgLap, lgLapId);
-// addBitsUp(mdLap, mdLapId);
-// addBitsUp(smNote, smNoteId);
-// addBitsUp(tabl, tablId);
-// addBitsUp(lgPhone, lgPhoneId);
-// addBitsUp(smPhone, smPhoneId);
